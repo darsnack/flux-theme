@@ -284,8 +284,9 @@ footer {
     width: var(--nav-width);
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 10;
     left: 0;
+    border-right: 1px solid #ddd;
 }
 
 #toc:not(:hover) {
