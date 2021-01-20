@@ -91,12 +91,14 @@ window.addEventListener("searchIndexLoaded", function (_) {
 var mql = window.matchMedia('screen and (max-width:760px)');
 mql.addEventListener("change",
     function(mq) {
+        var state = localStorage.getItem("pageState");
         if (mq.matches) {
             localStorage.setItem("mobile", true);
-            localStorage.setItem("pageState", "page");
+            if (state === "index") {
+                toggleIndexPage();
+            }
         } else {
             localStorage.setItem("mobile", false);
-            localStorage.setItem("pageState", "index");
         }
     }
 );

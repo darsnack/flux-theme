@@ -23,7 +23,7 @@ main {
 
 main#page {
     padding: 10px;
-    margin-left: calc(var(--nav-width) + 1em);
+    margin-left: calc(var(--nav-width) + 16px + 1em);
 }
 
 /* Article container */
@@ -90,6 +90,10 @@ hr {
     color: #aaa;
 }
 
+.hljs {
+    background-color: #eff5eb;
+}
+
 code {
     font-family: 'Fira Code', 'JuliaMono', monospace;
     font-style: normal;
@@ -151,7 +155,7 @@ a:link, a:visited {
     color: inherit;
 }
 
-a:hover {
+a:hover, a:hover > code {
     color: rgb(0, 114, 0);
 }
 
@@ -328,6 +332,12 @@ footer {
     font-size: 15px;
 }
 
+#toc hr {
+    margin: 10px 0px 10px 10px;
+    height: 0;
+    border-top: 1px solid #ddd;
+}
+
 /* Dynamic size */
 
 @media (max-width: 1260px) {
@@ -357,12 +367,16 @@ footer {
         margin-right: 8px;
         padding-right: 0px;
     }
-    nav {
+    #toc {
         width: 100%;
         display: none;
         justify-content: center;
         position: relative;
         align-self: center;
+        top: 0;
+    }
+    #toc * {
+        text-align: inherit;
     }
     main#page {
         margin-left: auto;
