@@ -26,7 +26,7 @@
 
 :root {
     /* width of the main article for desktop screens */
-    --content-width: 100ch;
+    --content-width: 90ch;
     /* width of the sidebar table of contents on desktop screens */
     --toc-width: 240px;
     /* width of margin notes */
@@ -352,6 +352,14 @@ div.footnote > p.footnote-title {
     margin: 16px 0px 0px 30px;
 }
 
+#toc a {
+    color: inherit;
+}
+
+#toc a:hover {
+    color: rgb(0, 126, 0);
+}
+
 .katex {
     font-size: 1.1em;
 }
@@ -434,16 +442,7 @@ a:visited {
     color: rgb(0, 97, 0);
 }
 
-a:hover {
-    font-weight: bold;
-}
-
-a:not(:hover) > code {
-    color:inherit;
-    font-weight: bold;
-}
-
-a:hover > code {
+a > code {
     color:inherit;
     font-weight: bold;
 }
