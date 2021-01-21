@@ -1,21 +1,19 @@
 function toggleIndexPage() {
-    var page = document.getElementById("page");
+    var page = document.getElementById("content");
     var toc = document.getElementById("toc");
+    var navigation = document.getElementById("page-navigation");
     // Get the current page state. Default to 'page'.
     var state = localStorage.getItem("pageState");
-    var margin = localStorage.getItem("contentMargin");
     var mobile = localStorage.getItem("mobile");
     // Toggle index based on 'state'.
     if (state === "page") {
         // Save the current scroll position on the page.
         localStorage.setItem("scrollTop", document.documentElement.scrollTop);
         // Hide the page and display the table-of-contents.
-        // page.style.display = "none";
         toc.style.display = "block";
         if (mobile === "true") {
             page.style.display = "none";
-        } else {
-            page.style.marginLeft = margin;
+            navigation.style.display = "none";
         }
         // Scroll to the top of the table of contents.
         document.documentElement.scrollTop = 0;
@@ -24,8 +22,7 @@ function toggleIndexPage() {
         // Hide the table-of-contents and display the page.
         toc.style.display = "none";
         page.style.display = "block";
-        page.style.marginLeft = "auto";
-        // page.style.display = "block";
+        navigation.style.display = "flex";
         // Restore the saved position on the page.
         document.documentElement.scrollTop = localStorage.getItem("scrollTop");
         localStorage.setItem("pageState", "page");
@@ -99,6 +96,9 @@ mql.addEventListener("change",
             }
         } else {
             localStorage.setItem("mobile", false);
+            if (state === "page") {
+                toggleIndexPage();
+            }
         }
     }
 );
@@ -111,11 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Hide the navigation section.
     if (localStorage.getItem("mobile") === "true") {
-        localStorage.setItem("pageState", "page");
+        localStorage.setItem("pageState", "index");
+        toggleIndexPage();
     } else {
         localStorage.setItem("pageState", "index");
     }
-    localStorage.setItem("contentMargin", document.getElementById("page").style.marginLeft);
     // Tabulator init.
     var table = document.getElementById("docstring-index");
     if (table !== null) {
