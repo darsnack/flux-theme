@@ -364,6 +364,10 @@ div.footnote > p.footnote-title {
     font-size: 1.1em;
 }
 
+#search-results {
+    width: calc(0.9 * var(--content-width));
+}
+
 footer {
     margin-left: var(--toc-width);
     margin-top: 32px;
