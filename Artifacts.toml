@@ -1,6 +1,6 @@
 [flux-theme]
-git-tree-sha1 = "d4692593b07cb7dce7a6958cddb834b6bf7cf8ff"
+git-tree-sha1 = "092f1786ec9e48a20be4d9a1e48fa8f0267efb90"
 
     [[flux-theme.download]]
-    sha256 = "4e0b95425c2926c40966863abd69704f46bc12f9009778c6acac7f6b55517835"
-    url = "https://github.com/darsnack/flux-theme/releases/download/v0.1.1/flux-theme-0.1.1.tar.gz"
+    sha256 = "090d5cff1b26886c440f0143043c355ab4b0cfb52db33b606db62f3f8cff5d07"
+    url = "https://github.com/darsnack/flux-theme/releases/download/v0.2.0/flux-theme-0.2.0.tar.gz"
