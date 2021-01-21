@@ -255,15 +255,34 @@ footer {
     width: 300px;
 }
 
-/* # Menu container */
+/* Project name */
+
+#projectname {
+    width: calc(var(--toc-width) - 32px);
+    float: left;
+    text-align: right;
+    margin-left: 16px;
+    padding-right: 16px;
+    font-family: 'Vollkorn', serif;
+    font-size: 25px;
+}
+
+/* Menu container */
+
+.menu {
+    padding-top: 4px;
+    border-bottom: none;
+    background-color: inherit;
+}
 
 #menu-toggler {
     cursor: pointer;
+    padding-right: 10px;
 }
 
 #search-input {
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 19px;
     margin: 0px 8px;
     flex-grow: 1;
@@ -377,6 +396,9 @@ footer {
     }
     #toc * {
         text-align: inherit;
+    }
+    #toc:not(:hover) {
+        opacity: 100%;
     }
     main#page {
         margin-left: auto;
